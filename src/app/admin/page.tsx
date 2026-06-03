@@ -1,5 +1,6 @@
 import { participantes, equiposStats, partidos } from '@/data/quiniela'
 import Link from 'next/link'
+import AdminPagos from './AdminPagos'
 
 export default function AdminPage() {
   return (
@@ -102,6 +103,8 @@ export default function AdminPage() {
             )}
           </div>
         </div>
+
+        <AdminPagos participantes={participantes} />
 
         <div className="flex gap-3">
           <Link href="/leaderboard" className="flex-1 text-center bg-green-600 hover:bg-green-500 text-white font-semibold rounded-xl py-3 text-sm transition-colors">

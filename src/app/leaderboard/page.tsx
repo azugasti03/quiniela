@@ -1,7 +1,12 @@
 import { participantes, equiposStats } from '@/data/quiniela'
+import { fetchAllMatches, derivarEquiposStats } from '@/lib/espn'
 import LeaderboardList from '@/components/LeaderboardList'
 
-export default function LeaderboardPage() {
+export default async function LeaderboardPage() {
+  const matches = await fetchAllMatches()
+  const liveStats = derivarEquiposStats(matches)
+  const mergedStats = { ...equiposStats, ...liveStats }
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-100 px-4 pt-12 pb-5">
@@ -9,7 +14,7 @@ export default function LeaderboardPage() {
         <h1 className="text-2xl font-bold text-gray-900 text-center mt-1">Posiciones</h1>
       </div>
       <div className="px-4 py-4">
-        <LeaderboardList participantes={participantes} equiposStats={equiposStats} />
+        <LeaderboardList participantes={participantes} equiposStats={mergedStats} />
       </div>
     </div>
   )

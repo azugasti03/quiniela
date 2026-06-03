@@ -1,3 +1,5 @@
+import { EquipoStats } from './types'
+
 export interface EspnTeam {
   name: string
   quinielaName: string
@@ -161,3 +163,74 @@ export function groupMatchesByRound(matches: EspnMatch[]) {
 }
 
 export const KNOCKOUT_ROUNDS = ['Round of 32', 'Round of 16', 'Quarterfinal', 'Semifinal', 'Final']
+
+export function derivarEquiposStats(matches: EspnMatch[]): Record<string, EquipoStats> {
+  const stats: Record<string, EquipoStats> = {}
+
+  function get(name: string): EquipoStats {
+    if (!stats[name]) {
+      stats[name] = { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false }
+    }
+    return stats[name]
+  }
+
+  for (const match of matches) {
+    const home = match.home.quinielaName
+    const away = match.away.quinielaName
+    const finished = match.statusState === 'post'
+    const round = match.round
+
+    if (round === 'Group Stage') {
+      if (finished) {
+        const hs = parseInt(match.home.score ?? '')
+        const as_ = parseInt(match.away.score ?? '')
+        if (!isNaN(hs) && !isNaN(as_)) {
+          if (hs > as_) get(home).victoriasGrupos++
+          else if (as_ > hs) get(away).victoriasGrupos++
+        }
+      }
+    } else if (round === 'Round of 32' || round === 'Round of 16') {
+      get(home).clasifico = true
+      get(away).clasifico = true
+    } else if (round.includes('Quarterfinal')) {
+      get(home).clasifico = true
+      get(away).clasifico = true
+      get(home).cuartos = true
+      get(away).cuartos = true
+    } else if (round === 'Semifinal') {
+      get(home).clasifico = true
+      get(away).clasifico = true
+      get(home).cuartos = true
+      get(away).cuartos = true
+      get(home).semis = true
+      get(away).semis = true
+    } else if (round === '3rd Place') {
+      // Perdieron la semi, no llegan a la final
+      get(home).clasifico = true
+      get(away).clasifico = true
+      get(home).cuartos = true
+      get(away).cuartos = true
+      get(home).semis = true
+      get(away).semis = true
+    } else if (round === 'Final') {
+      get(home).clasifico = true
+      get(away).clasifico = true
+      get(home).cuartos = true
+      get(away).cuartos = true
+      get(home).semis = true
+      get(away).semis = true
+      get(home).final = true
+      get(away).final = true
+      if (finished) {
+        const hs = parseInt(match.home.score ?? '')
+        const as_ = parseInt(match.away.score ?? '')
+        if (!isNaN(hs) && !isNaN(as_)) {
+          if (hs > as_) get(home).campeon = true
+          else if (as_ > hs) get(away).campeon = true
+        }
+      }
+    }
+  }
+
+  return stats
+}

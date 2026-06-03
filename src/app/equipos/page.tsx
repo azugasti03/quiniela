@@ -1,7 +1,12 @@
 import { participantes, equiposStats } from '@/data/quiniela'
+import { fetchAllMatches, derivarEquiposStats } from '@/lib/espn'
 import EquiposGrid from '@/components/EquiposGrid'
 
-export default function EquiposPage() {
+export default async function EquiposPage() {
+  const matches = await fetchAllMatches()
+  const liveStats = derivarEquiposStats(matches)
+  const mergedStats = { ...equiposStats, ...liveStats }
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-100 px-4 pt-12 pb-5">
@@ -11,7 +16,7 @@ export default function EquiposPage() {
       </div>
 
       <div className="px-4 py-4">
-        <EquiposGrid participantes={participantes} equiposStats={equiposStats} />
+        <EquiposGrid participantes={participantes} equiposStats={mergedStats} />
       </div>
     </div>
   )
