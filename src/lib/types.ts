@@ -5,6 +5,7 @@ export interface Participante {
   id: string
   nombre: string
   pagado: boolean
+  foto: string   // URL de foto o ruta en /public/fotos/nombre.jpg — deja '' para usar iniciales
   bombo1: string
   bombo2: string
   bombo3: string

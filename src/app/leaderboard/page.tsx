@@ -1,12 +1,9 @@
 import { participantes, equiposStats } from '@/data/quiniela'
 import { calcularLeaderboard, getFlag } from '@/lib/scoring'
+import Avatar from '@/components/Avatar'
 
 const MEDALS = ['🥇', '🥈', '🥉']
-const POSITION_STYLE = [
-  'border-l-4 border-yellow-400',
-  'border-l-4 border-gray-400',
-  'border-l-4 border-amber-600',
-]
+const TOP3_BORDER = ['border-l-4 border-yellow-400', 'border-l-4 border-gray-400', 'border-l-4 border-amber-600']
 
 export default function LeaderboardPage() {
   const leaderboard = calcularLeaderboard(participantes, equiposStats)
@@ -14,7 +11,6 @@ export default function LeaderboardPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <div className="bg-white border-b border-gray-100 px-4 pt-12 pb-5">
         <p className="text-green-600 text-xs font-bold tracking-widest uppercase text-center">⚽ Mundial 2026</p>
         <h1 className="text-2xl font-bold text-gray-900 text-center mt-1">Posiciones</h1>
@@ -29,17 +25,17 @@ export default function LeaderboardPage() {
           return (
             <div
               key={p.id}
-              className={`bg-white rounded-2xl shadow-sm overflow-hidden ${isTop3 ? POSITION_STYLE[i] : 'border border-gray-100'}`}
+              className={`bg-white rounded-2xl shadow-sm overflow-hidden ${isTop3 ? TOP3_BORDER[i] : 'border border-gray-100'}`}
             >
               <div className="px-4 py-3">
                 <div className="flex items-center gap-3">
-                  {/* Position */}
+                  {/* Medal / position */}
                   <span className="text-xl w-7 text-center shrink-0">
-                    {i < 3
-                      ? MEDALS[i]
-                      : <span className="text-sm font-bold text-gray-400">{i + 1}</span>
-                    }
+                    {i < 3 ? MEDALS[i] : <span className="text-sm font-bold text-gray-400">{i + 1}</span>}
                   </span>
+
+                  {/* Avatar */}
+                  <Avatar nombre={p.nombre} foto={p.foto} size="sm" />
 
                   {/* Name + bar */}
                   <div className="flex-1 min-w-0">
@@ -50,8 +46,6 @@ export default function LeaderboardPage() {
                         <span className="text-xs font-normal text-gray-400 ml-1">pts</span>
                       </p>
                     </div>
-
-                    {/* Bar */}
                     <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                       <div
                         className={`h-full rounded-full ${i === 0 && p.puntos > 0 ? 'bg-yellow-400' : 'bg-green-500'}`}
@@ -63,7 +57,7 @@ export default function LeaderboardPage() {
 
                 {/* Teams */}
                 {teams.length > 0 ? (
-                  <div className="flex flex-wrap gap-1.5 mt-2.5 ml-10">
+                  <div className="flex flex-wrap gap-1.5 mt-2.5 ml-[88px]">
                     {teams.map((t) => (
                       <span key={t} className="inline-flex items-center gap-1 text-xs bg-gray-100 text-gray-600 rounded-full px-2.5 py-1">
                         {getFlag(t)} {t}
@@ -71,7 +65,7 @@ export default function LeaderboardPage() {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-xs text-gray-400 mt-2 ml-10 italic">Equipos por asignar</p>
+                  <p className="text-xs text-gray-400 mt-2 ml-[88px] italic">Equipos por asignar</p>
                 )}
               </div>
             </div>
