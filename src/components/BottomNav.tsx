@@ -8,8 +8,7 @@ const tabs = [
     label: 'Posiciones',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M16 4v4l2 2v2H6v-2l2-2V4m4 14a2 2 0 100-4 2 2 0 000 4z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 4h8" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 4v4l2 2v2H6v-2l2-2V4m4 14a2 2 0 100-4 2 2 0 000 4zM8 4h8" />
       </svg>
     ),
   },
@@ -33,13 +32,21 @@ const tabs = [
     ),
   },
   {
+    href: '/bracket',
+    label: 'Bracket',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 6h4v4H3zM3 14h4v4H3zM17 9h4v4h-4zM7 8h4M7 16h4M11 8v8M11 12h6" />
+      </svg>
+    ),
+  },
+  {
     href: '/pagos',
     label: 'Pagos',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth={1.8}>
         <rect x="2" y="5" width="20" height="14" rx="2" />
-        <path strokeLinecap="round" d="M2 10h20" />
-        <path strokeLinecap="round" d="M6 15h4" />
+        <path strokeLinecap="round" d="M2 10h20M6 15h4" />
       </svg>
     ),
   },
@@ -57,7 +64,7 @@ export default function BottomNav() {
             <Link
               key={tab.href}
               href={tab.href}
-              className={`flex-1 flex flex-col items-center gap-1 py-3 text-xs font-medium transition-colors ${
+              className={`flex-1 flex flex-col items-center gap-0.5 py-2.5 text-xs font-medium transition-colors ${
                 active ? 'text-green-400' : 'text-slate-400 hover:text-slate-200'
               }`}
             >
