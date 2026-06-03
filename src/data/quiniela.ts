@@ -14,18 +14,18 @@ import { Participante, EquipoStats, Partido } from '@/lib/types'
 //  Deja el campo vacío ("") hasta que se haga el sorteo
 // ----------------------------------------------------------------
 export const participantes: Participante[] = [
-  { id: '1',  nombre: 'Participante 1',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '2',  nombre: 'Participante 2',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '3',  nombre: 'Participante 3',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '4',  nombre: 'Participante 4',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '5',  nombre: 'Participante 5',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '6',  nombre: 'Participante 6',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '7',  nombre: 'Participante 7',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '8',  nombre: 'Participante 8',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '9',  nombre: 'Participante 9',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '10', nombre: 'Participante 10', pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '11', nombre: 'Por confirmar',   pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '12', nombre: 'Por confirmar',   pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '1',  nombre: 'Alan',           pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '2',  nombre: 'David',          pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '3',  nombre: 'Mulato',         pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '4',  nombre: 'Juanca',         pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '5',  nombre: 'Guzmi',          pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '6',  nombre: 'Edgi',           pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '7',  nombre: 'Ruben',          pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '8',  nombre: 'Guillen',        pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '9',  nombre: 'Angel',          pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '10', nombre: 'Ruiz',           pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '11', nombre: 'Por confirmar',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '12', nombre: 'Por confirmar',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
 ]
 
 // ----------------------------------------------------------------
