@@ -1,6 +1,6 @@
 import { fetchAllMatches, KNOCKOUT_ROUNDS, EspnMatch } from '@/lib/espn'
 import { participantes } from '@/data/quiniela'
-import { getFlag } from '@/lib/scoring'
+import Image from 'next/image'
 
 export const revalidate = 120
 
@@ -50,7 +50,9 @@ function BracketMatch({ m, isFinal = false }: { m: EspnMatch; isFinal?: boolean 
         wins ? 'bg-green-900/30' : ''
       } ${side === 'home' ? 'border-b border-slate-700' : ''}`}>
         <div className="flex items-center gap-2 min-w-0">
-          <span className="text-base shrink-0">{getFlag(t.quinielaName)}</span>
+          {t.logo
+            ? <Image src={t.logo} alt={t.name} width={28} height={28} className="shrink-0 rounded-sm" unoptimized />
+            : <span className="text-base shrink-0">🏳️</span>}
           <div className="min-w-0">
             <p className={`text-sm font-semibold truncate ${wins ? 'text-green-400' : 'text-white'}`}>
               {t.name || 'Por definir'}

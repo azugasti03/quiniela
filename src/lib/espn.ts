@@ -1,10 +1,17 @@
+export interface EspnTeam {
+  name: string
+  quinielaName: string
+  logo: string
+  score: string | null
+}
+
 export interface EspnMatch {
   id: string
   date: string
   statusState: 'pre' | 'in' | 'post'
   displayClock?: string
-  home: { name: string; quinielaName: string; score: string | null }
-  away: { name: string; quinielaName: string; score: string | null }
+  home: EspnTeam
+  away: EspnTeam
   round: string
   group?: string
   venue?: string
@@ -92,11 +99,13 @@ function parseEvent(e: any): EspnMatch | null {
     home: {
       name: homeName,
       quinielaName: ESPN_TO_QUINIELA[homeName] ?? homeName,
+      logo: home.team?.logo ?? '',
       score: home.score ?? null,
     },
     away: {
       name: awayName,
       quinielaName: ESPN_TO_QUINIELA[awayName] ?? awayName,
+      logo: away.team?.logo ?? '',
       score: away.score ?? null,
     },
     round: comp.type?.text ?? 'Group Stage',

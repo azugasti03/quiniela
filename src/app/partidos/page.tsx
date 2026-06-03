@@ -1,6 +1,6 @@
 import { fetchAllMatches, groupMatchesByRound, KNOCKOUT_ROUNDS, EspnMatch } from '@/lib/espn'
 import { participantes } from '@/data/quiniela'
-import { getFlag } from '@/lib/scoring'
+import Image from 'next/image'
 
 export const revalidate = 120
 
@@ -43,8 +43,10 @@ function MatchCard({ m }: { m: EspnMatch }) {
 
       <div className="flex items-center justify-between gap-2">
         <div className="flex-1 text-center">
-          <p className="text-2xl">{getFlag(m.home.quinielaName)}</p>
-          <p className="text-white font-semibold text-sm leading-tight mt-0.5">{m.home.name}</p>
+          {m.home.logo
+            ? <Image src={m.home.logo} alt={m.home.name} width={48} height={48} className="mx-auto" unoptimized />
+            : <p className="text-3xl">🏳️</p>}
+          <p className="text-white font-semibold text-sm leading-tight mt-1">{m.home.name}</p>
           {dLocal.length > 0 && <p className="text-green-400 text-xs mt-0.5">{dLocal.join(', ')}</p>}
         </div>
 
@@ -59,8 +61,10 @@ function MatchCard({ m }: { m: EspnMatch }) {
         </div>
 
         <div className="flex-1 text-center">
-          <p className="text-2xl">{getFlag(m.away.quinielaName)}</p>
-          <p className="text-white font-semibold text-sm leading-tight mt-0.5">{m.away.name}</p>
+          {m.away.logo
+            ? <Image src={m.away.logo} alt={m.away.name} width={48} height={48} className="mx-auto" unoptimized />
+            : <p className="text-3xl">🏳️</p>}
+          <p className="text-white font-semibold text-sm leading-tight mt-1">{m.away.name}</p>
           {dVisit.length > 0 && <p className="text-green-400 text-xs mt-0.5">{dVisit.join(', ')}</p>}
         </div>
       </div>
