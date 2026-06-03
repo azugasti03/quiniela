@@ -1,0 +1,113 @@
+// ================================================================
+//  QUINIELA MUNDIAL 2026 — ARCHIVO DE DATOS
+//  Edita este archivo para actualizar todo el sitio.
+//  Después haz: git add . && git commit -m "update" && git push
+//  Vercel despliega automáticamente en ~30 segundos.
+// ================================================================
+
+import { Participante, EquipoStats, Partido } from '@/lib/types'
+
+// ----------------------------------------------------------------
+//  PARTICIPANTES
+//  pagado: cambia a true cuando alguien pague
+//  bombo1 = Potencia, bombo2 = Competitivo, bombo3 = Regular, bombo4 = Longshot
+//  Deja el campo vacío ("") hasta que se haga el sorteo
+// ----------------------------------------------------------------
+export const participantes: Participante[] = [
+  { id: '1',  nombre: 'Participante 1',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '2',  nombre: 'Participante 2',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '3',  nombre: 'Participante 3',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '4',  nombre: 'Participante 4',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '5',  nombre: 'Participante 5',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '6',  nombre: 'Participante 6',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '7',  nombre: 'Participante 7',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '8',  nombre: 'Participante 8',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '9',  nombre: 'Participante 9',  pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '10', nombre: 'Participante 10', pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '11', nombre: 'Por confirmar',   pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '12', nombre: 'Por confirmar',   pagado: false, bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+]
+
+// ----------------------------------------------------------------
+//  ESTADÍSTICAS POR EQUIPO
+//  Actualiza después de cada partido / ronda eliminatoria.
+//  victoriasGrupos: cuántas victorias tuvo en fase de grupos (0–3)
+//  clasifico: pasó la fase de grupos
+//  cuartos / semis / final / campeon: avanzó a esa ronda
+// ----------------------------------------------------------------
+export const equiposStats: Record<string, EquipoStats> = {
+  // — BOMBO 1 (Potencias) —
+  'Argentina':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Francia':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Brasil':          { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'España':          { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Portugal':        { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Alemania':        { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Países Bajos':    { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Bélgica':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Inglaterra':      { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Croacia':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Uruguay':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'USA':             { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  // — BOMBO 2 (Competitivos) —
+  'México':          { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Canadá':          { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Colombia':        { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Dinamarca':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Austria':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Suiza':           { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Japón':           { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Marruecos':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Senegal':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Australia':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Corea del Sur':   { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Turquía':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  // — BOMBO 3 (Regulares) —
+  'Ecuador':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Polonia':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Serbia':          { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Irán':            { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Túnez':           { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Ghana':           { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Costa Rica':      { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Nigeria':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Venezuela':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Escocia':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Arabia Saudita':  { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Panamá':          { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  // — BOMBO 4 (Longshots) —
+  'Bolivia':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Indonesia':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Honduras':        { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Jamaica':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Albania':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Georgia':         { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Irak':            { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Jordania':        { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Nueva Zelanda':   { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Costa de Marfil': { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Qatar':           { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+  'Eslovenia':       { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false },
+}
+
+// ----------------------------------------------------------------
+//  PARTIDOS
+//  status: 'pendiente' | 'en_vivo' | 'finalizado'
+//  golesLocal / golesVisitante: null mientras no se juegue
+//  grupo: solo en fase de grupos (A, B, C, ...)
+// ----------------------------------------------------------------
+export const partidos: Partido[] = [
+  // Agrega los partidos aquí. Ejemplo:
+  // {
+  //   id: '1',
+  //   fecha: '2026-06-11',
+  //   hora: '12:00',
+  //   equipoLocal: 'México',
+  //   equipoVisitante: 'Ecuador',
+  //   golesLocal: null,
+  //   golesVisitante: null,
+  //   fase: 'Grupos',
+  //   grupo: 'B',
+  //   status: 'pendiente',
+  // },
+]
