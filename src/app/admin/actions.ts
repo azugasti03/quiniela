@@ -31,7 +31,7 @@ export async function togglePago(
         cache: 'no-store',
       }
     )
-    if (!getRes.ok) return { error: 'No se pudo leer el archivo en GitHub' }
+    if (!getRes.ok) return { error: `GitHub API error ${getRes.status}: ${await getRes.text()}` }
     const fileData = await getRes.json()
     const currentContent = Buffer.from(fileData.content.replace(/\n/g, ''), 'base64').toString('utf-8')
 
