@@ -1,6 +1,5 @@
 import { participantes, equiposStats, partidos } from '@/data/quiniela'
 import Link from 'next/link'
-import AdminPagos from './AdminPagos'
 
 export default function AdminPage() {
   return (
@@ -11,29 +10,6 @@ export default function AdminPage() {
       </div>
 
       <div className="px-4 py-5 space-y-5">
-        {/* How to update */}
-        <div className="rounded-xl bg-slate-800 border border-slate-700 p-4 space-y-3">
-          <p className="text-white font-semibold">¿Cómo actualizar los datos?</p>
-          <ol className="space-y-2 text-sm text-slate-300">
-            <li className="flex gap-2">
-              <span className="text-green-400 font-bold shrink-0">1.</span>
-              Abre el archivo <code className="text-yellow-400 bg-slate-900 px-1.5 py-0.5 rounded text-xs">src/data/quiniela.ts</code> en tu editor
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-400 font-bold shrink-0">2.</span>
-              Edita los nombres, pagos, equipos o resultados
-            </li>
-            <li className="flex gap-2">
-              <span className="text-green-400 font-bold shrink-0">3.</span>
-              Guarda y ejecuta en la terminal:
-            </li>
-          </ol>
-          <div className="bg-slate-900 rounded-lg p-3 font-mono text-xs text-green-400 border border-slate-700">
-            git add . &amp;&amp; git commit -m &quot;update&quot; &amp;&amp; git push
-          </div>
-          <p className="text-slate-500 text-xs">Vercel redespliega automáticamente en ~30 segundos.</p>
-        </div>
-
         {/* Current state summary */}
         <div className="rounded-xl bg-slate-800 border border-slate-700 p-4 space-y-4">
           <p className="text-white font-semibold">Estado actual</p>
@@ -103,8 +79,6 @@ export default function AdminPage() {
             )}
           </div>
         </div>
-
-        <AdminPagos participantes={participantes} />
 
         <div className="flex gap-3">
           <Link href="/leaderboard" className="flex-1 text-center bg-green-600 hover:bg-green-500 text-white font-semibold rounded-xl py-3 text-sm transition-colors">

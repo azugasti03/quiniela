@@ -1,4 +1,5 @@
 import { participantes } from '@/data/quiniela'
+import AdminPagos from '@/app/admin/AdminPagos'
 
 export default function PagosPage() {
   const pagados = participantes.filter((p) => p.pagado)
@@ -7,7 +8,6 @@ export default function PagosPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <div className="bg-white border-b border-gray-100 px-4 pt-12 pb-5">
         <p className="text-green-600 text-xs font-bold tracking-widest uppercase text-center">⚽ Mundial 2026</p>
         <h1 className="text-2xl font-bold text-gray-900 text-center mt-1">Pagos</h1>
@@ -63,6 +63,9 @@ export default function PagosPage() {
             </div>
           </div>
         )}
+
+        {/* Admin: gestionar pagos (solo con PIN) */}
+        <AdminPagos participantes={participantes} />
       </div>
     </div>
   )
