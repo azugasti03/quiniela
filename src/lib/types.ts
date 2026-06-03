@@ -5,7 +5,8 @@ export interface Participante {
   id: string
   nombre: string
   pagado: boolean
-  foto: string   // URL de foto o ruta en /public/fotos/nombre.jpg — deja '' para usar iniciales
+  foto: string           // URL de foto o ruta en /public/fotos/nombre.jpg — deja '' para usar iniciales
+  fotoPosition?: string  // CSS object-position, ej: 'top', 'center', '50% 20%'
   bombo1: string
   bombo2: string
   bombo3: string

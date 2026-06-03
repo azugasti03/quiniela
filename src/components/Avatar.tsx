@@ -13,11 +13,12 @@ const SIZES = {
 interface AvatarProps {
   nombre: string
   foto?: string
+  fotoPosition?: string
   size?: keyof typeof SIZES
   className?: string
 }
 
-export default function Avatar({ nombre, foto, size = 'md', className = '' }: AvatarProps) {
+export default function Avatar({ nombre, foto, fotoPosition = 'center top', size = 'md', className = '' }: AvatarProps) {
   const initials = nombre
     .split(' ')
     .map((w) => w[0])
@@ -34,6 +35,7 @@ export default function Avatar({ nombre, foto, size = 'md', className = '' }: Av
         src={foto}
         alt={nombre}
         className={`${SIZES[size]} rounded-full object-cover ${className}`}
+        style={{ objectPosition: fotoPosition }}
       />
     )
   }
