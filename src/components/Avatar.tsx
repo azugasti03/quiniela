@@ -18,7 +18,7 @@ interface AvatarProps {
   className?: string
 }
 
-export default function Avatar({ nombre, foto, fotoPosition = 'center top', size = 'md', className = '' }: AvatarProps) {
+export default function Avatar({ nombre, foto, fotoPosition = 'center', size = 'md', className = '' }: AvatarProps) {
   const initials = nombre
     .split(' ')
     .map((w) => w[0])
