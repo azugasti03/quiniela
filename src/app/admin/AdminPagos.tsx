@@ -37,15 +37,14 @@ export default function AdminPagos({ participantes }: Props) {
     setError(null)
     setSuccess(null)
     startTransition(async () => {
-      try {
-        await togglePago(nombre, newPagado, pin)
+      const result = await togglePago(nombre, newPagado, pin)
+      if (result.error) {
+        setError(result.error)
+      } else {
         setPagados((prev) => ({ ...prev, [nombre]: newPagado }))
         setSuccess(`${nombre} ${newPagado ? 'marcado como pagado' : 'desmarcado'} · Vercel despliega en ~30s`)
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Error desconocido')
-      } finally {
-        setLoadingNombre(null)
       }
+      setLoadingNombre(null)
     })
   }
 
