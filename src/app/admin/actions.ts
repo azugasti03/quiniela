@@ -1,6 +1,6 @@
 'use server'
 
-const GITHUB_OWNER = 'azugaste03'
+const GITHUB_OWNER = 'azugasti03'
 const GITHUB_REPO = 'quiniela'
 const FILE_PATH = 'src/data/quiniela.ts'
 
