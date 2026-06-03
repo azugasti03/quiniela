@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
+  --background: #ffffff;
+  --foreground: #111827;
 }
 
 body {
@@ -12,7 +12,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Safe area for bottom nav on iOS */
 .pb-nav {
   padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
 }
+
+/* Hide scrollbar for filter chips */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
