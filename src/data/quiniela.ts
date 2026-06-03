@@ -14,7 +14,7 @@ import { Participante, EquipoStats, Partido } from '@/lib/types'
 //  Deja el campo vacío ("") hasta que se haga el sorteo
 // ----------------------------------------------------------------
 export const participantes: Participante[] = [
-  { id: '1',  nombre: 'Alan',           pagado: false,  foto: '/fotos/alan.jpg',     fotoPosition: 'center 20%', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '1',  nombre: 'Alan',           pagado: true,  foto: '/fotos/alan.jpg',     fotoPosition: 'center 20%', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '2',  nombre: 'David',          pagado: true,  foto: '/fotos/david.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '3',  nombre: 'Mulato',         pagado: false, foto: '/fotos/mulato.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '4',  nombre: 'Juanca',         pagado: false, foto: '/fotos/juanca.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
