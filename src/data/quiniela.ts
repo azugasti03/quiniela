@@ -14,18 +14,18 @@ import { Participante, EquipoStats, Partido } from '@/lib/types'
 //  Deja el campo vacío ("") hasta que se haga el sorteo
 // ----------------------------------------------------------------
 export const participantes: Participante[] = [
-  { id: '1',  nombre: 'Alan',           pagado: true,  foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '2',  nombre: 'David',          pagado: true,  foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '3',  nombre: 'Mulato',         pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '4',  nombre: 'Juanca',         pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '5',  nombre: 'Guzmi',          pagado: true,  foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '6',  nombre: 'Edgi',           pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '7',  nombre: 'Ruben',          pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '8',  nombre: 'Guillen',        pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '9',  nombre: 'Angel',          pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '10', nombre: 'Ruiz',           pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '11', nombre: 'Parrilla',       pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '12', nombre: 'Por confirmar',  pagado: false, foto: '', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '1',  nombre: 'Alan',           pagado: true,  foto: '/fotos/alan.jpg',     bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '2',  nombre: 'David',          pagado: true,  foto: '/fotos/david.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '3',  nombre: 'Mulato',         pagado: false, foto: '/fotos/diego.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '4',  nombre: 'Juanca',         pagado: false, foto: '/fotos/juanca.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '5',  nombre: 'Guzmi',          pagado: true,  foto: '/fotos/guzmi.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '6',  nombre: 'Edgi',           pagado: false, foto: '/fotos/edgar.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '7',  nombre: 'Ruben',          pagado: false, foto: '/fotos/ruben.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '8',  nombre: 'Guillen',        pagado: false, foto: '/fotos/guillen.jpg',  bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '9',  nombre: 'Angel',          pagado: false, foto: '/fotos/angel.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '10', nombre: 'Ruiz',           pagado: false, foto: '/fotos/ruiz.jpg',     bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '11', nombre: 'Parrilla',       pagado: false, foto: '/fotos/parrilla.jpg', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '12', nombre: 'Por confirmar',  pagado: false, foto: '',                    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
 ]
 
 // ----------------------------------------------------------------
