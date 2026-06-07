@@ -16,7 +16,7 @@ import { Participante, EquipoStats, Partido } from '@/lib/types'
 export const participantes: Participante[] = [
   { id: '1',  nombre: 'Alan',           pagado: true,  foto: '/fotos/alan.jpg',     fotoPosition: 'center 20%', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '2',  nombre: 'David',          pagado: true,  foto: '/fotos/david.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '3',  nombre: 'Mulato',         pagado: false, foto: '/fotos/mulato.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '3',  nombre: 'Mulato',         pagado: true, foto: '/fotos/mulato.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '4',  nombre: 'Juanca',         pagado: false, foto: '/fotos/juanca.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '5',  nombre: 'Guzmi',          pagado: true,  foto: '/fotos/guzmi.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '6',  nombre: 'Edgi',           pagado: false, foto: '/fotos/edgar.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
