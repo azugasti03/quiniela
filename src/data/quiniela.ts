@@ -23,9 +23,9 @@ export const participantes: Participante[] = [
   { id: '7',  nombre: 'Ruben',          pagado: true, foto: '/fotos/ruben.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '8',  nombre: 'Guillen',        pagado: true, foto: '/fotos/guillen.jpg',  bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
   { id: '9',  nombre: 'Angel',          pagado: true,  foto: '/fotos/angel.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '10', nombre: 'Ruiz',           pagado: false, foto: '/fotos/ruiz.jpg',     bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '11', nombre: 'Parrilla',       pagado: false, foto: '/fotos/parrilla.jpg', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '12', nombre: 'Diego',          pagado: true, foto: '/fotos/diego.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '10', nombre: 'Chris',           pagado: false, foto: '/fotos/chris.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '11', nombre: 'Mau',            pagado: false, foto: '/fotos/mau.jpg',      bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '12', nombre: 'Diego',          pagado: true,  foto: '/fotos/diego.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
 ]
 
 // ----------------------------------------------------------------
