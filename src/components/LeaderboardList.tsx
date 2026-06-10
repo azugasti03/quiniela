@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react'
 import { Participante, EquipoStats } from '@/lib/types'
-import { calcularLeaderboard, getFlag } from '@/lib/scoring'
+import { calcularLeaderboard } from '@/lib/scoring'
+import TeamFlag from './TeamFlag'
 import Avatar from './Avatar'
 import ParticipanteModal from './ParticipanteModal'
 
@@ -63,7 +64,7 @@ export default function LeaderboardList({ participantes, equiposStats }: Props) 
                   <div className="flex flex-wrap gap-1.5 mt-2.5 ml-[88px]">
                     {teams.map((t) => (
                       <span key={t} className="inline-flex items-center gap-1 text-xs bg-gray-100 text-gray-600 rounded-full px-2.5 py-1">
-                        {getFlag(t)} {t}
+                        <TeamFlag team={t} /> {t}
                       </span>
                     ))}
                   </div>

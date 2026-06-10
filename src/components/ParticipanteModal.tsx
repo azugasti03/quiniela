@@ -1,8 +1,9 @@
 'use client'
 import { useEffect } from 'react'
 import { Participante, EquipoStats } from '@/lib/types'
-import { calcularPuntosEquipo, getFlag } from '@/lib/scoring'
+import { calcularPuntosEquipo } from '@/lib/scoring'
 import Avatar from './Avatar'
+import TeamFlag from './TeamFlag'
 
 const BOMBOS = [
   { key: 'bombo1' as const, label: 'Potencia',    dot: 'bg-yellow-400' },
@@ -77,7 +78,7 @@ export default function ParticipanteModal({ p, equiposStats, onClose }: Props) {
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-gray-400 font-medium">{b.label}</p>
                   {equipo
-                    ? <p className="text-gray-900 font-semibold text-sm mt-0.5">{getFlag(equipo)} {equipo}</p>
+                    ? <p className="text-gray-900 font-semibold text-sm mt-0.5 flex items-center gap-1.5"><TeamFlag team={equipo} /> {equipo}</p>
                     : <p className="text-gray-300 text-sm italic mt-0.5">Por asignar</p>}
                 </div>
                 {equipo && (

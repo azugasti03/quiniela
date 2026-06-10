@@ -1,9 +1,10 @@
 'use client'
 import { useState } from 'react'
 import { Participante, EquipoStats } from '@/lib/types'
-import { calcularPuntosEquipo, getFlag } from '@/lib/scoring'
+import { calcularPuntosEquipo } from '@/lib/scoring'
 import Avatar from './Avatar'
 import ParticipanteModal from './ParticipanteModal'
+import TeamFlag from './TeamFlag'
 
 const BOMBOS = [
   { key: 'bombo1' as const, label: 'Potencia',    dot: 'bg-yellow-400' },
@@ -66,7 +67,7 @@ export default function EquiposGrid({ participantes, equiposStats }: Props) {
                         <p className="text-xs text-gray-400">{b.label}</p>
                       </div>
                       {equipo
-                        ? <p className="text-gray-800 text-sm font-medium">{getFlag(equipo)} {equipo}</p>
+                        ? <p className="text-gray-800 text-sm font-medium flex items-center gap-1.5"><TeamFlag team={equipo} /> {equipo}</p>
                         : <p className="text-gray-300 text-sm italic">Por asignar</p>
                       }
                     </div>

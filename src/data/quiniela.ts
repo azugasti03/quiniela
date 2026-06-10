@@ -14,18 +14,18 @@ import { Participante, EquipoStats, Partido } from '@/lib/types'
 //  Deja el campo vacío ("") hasta que se haga el sorteo
 // ----------------------------------------------------------------
 export const participantes: Participante[] = [
-  { id: '1',  nombre: 'Alan',           pagado: true,  foto: '/fotos/alan.jpg',     fotoPosition: 'center 20%', bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '2',  nombre: 'David',          pagado: true,  foto: '/fotos/david.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '3',  nombre: 'Mulato',         pagado: true, foto: '/fotos/mulato.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '4',  nombre: 'Juanca',         pagado: true, foto: '/fotos/juanca.jpg',   bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '5',  nombre: 'Guzmi',          pagado: true,  foto: '/fotos/guzmi.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '6',  nombre: 'Edgi',           pagado: true, foto: '/fotos/edgar.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '7',  nombre: 'Ruben',          pagado: true, foto: '/fotos/ruben.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '8',  nombre: 'Guillen',        pagado: true, foto: '/fotos/guillen.jpg',  bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '9',  nombre: 'Angel',          pagado: true,  foto: '/fotos/angel.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '10', nombre: 'Chris',           pagado: true, foto: '/fotos/chris.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '11', nombre: 'Mau',            pagado: true, foto: '/fotos/mau.jpg',      bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
-  { id: '12', nombre: 'Diego',          pagado: true,  foto: '/fotos/diego.jpg',    bombo1: '', bombo2: '', bombo3: '', bombo4: '' },
+  { id: '1',  nombre: 'Alan',    pagado: true,  foto: '/fotos/alan.jpg',     fotoPosition: 'center 20%', bombo1: 'Francia',       bombo2: 'Japón',          bombo3: 'Suecia',          bombo4: 'Curazao'       },
+  { id: '2',  nombre: 'David',   pagado: true,  foto: '/fotos/david.jpg',                                bombo1: 'Argentina',     bombo2: 'Turquía',        bombo3: 'Paraguay',        bombo4: 'Nueva Zelanda' },
+  { id: '3',  nombre: 'Mulato',  pagado: true,  foto: '/fotos/mulato.jpg',                               bombo1: 'Marruecos',     bombo2: 'Irán',           bombo3: 'Canadá',          bombo4: 'Bosnia'        },
+  { id: '4',  nombre: 'Juanca',  pagado: true,  foto: '/fotos/juanca.jpg',                               bombo1: 'Bélgica',       bombo2: 'Corea del Sur',  bombo3: 'Egipto',          bombo4: 'Irak'          },
+  { id: '5',  nombre: 'Guzmi',   pagado: true,  foto: '/fotos/guzmi.jpg',                                bombo1: 'Croacia',       bombo2: 'Australia',      bombo3: 'Escocia',         bombo4: 'Haití'         },
+  { id: '6',  nombre: 'Edgi',    pagado: true,  foto: '/fotos/edgar.jpg',                                bombo1: 'España',        bombo2: 'USA',            bombo3: 'RD Congo',        bombo4: 'Jordania'      },
+  { id: '7',  nombre: 'Ruben',   pagado: true,  foto: '/fotos/ruben.jpg',                                bombo1: 'Alemania',      bombo2: 'Austria',        bombo3: 'Argelia',         bombo4: 'Sudáfrica'     },
+  { id: '8',  nombre: 'Guillen', pagado: true,  foto: '/fotos/guillen.jpg',                              bombo1: 'Brasil',        bombo2: 'México',         bombo3: 'Túnez',           bombo4: 'Ghana'         },
+  { id: '9',  nombre: 'Angel',   pagado: true,  foto: '/fotos/angel.jpg',                                bombo1: 'Países Bajos',  bombo2: 'Ecuador',        bombo3: 'Noruega',         bombo4: 'Qatar'         },
+  { id: '10', nombre: 'Chris',   pagado: true,  foto: '/fotos/chris.jpg',                                bombo1: 'Portugal',      bombo2: 'Suiza',          bombo3: 'Panamá',          bombo4: 'Cabo Verde'    },
+  { id: '11', nombre: 'Mau',     pagado: true,  foto: '/fotos/mau.jpg',                                  bombo1: 'Colombia',      bombo2: 'Uruguay',        bombo3: 'Costa de Marfil', bombo4: 'Uzbekistán'    },
+  { id: '12', nombre: 'Diego',   pagado: true,  foto: '/fotos/diego.jpg',                                bombo1: 'Inglaterra',    bombo2: 'Senegal',        bombo3: 'República Checa', bombo4: 'Arabia Saudita'},
 ]
 
 // ----------------------------------------------------------------
