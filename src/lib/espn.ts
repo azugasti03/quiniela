@@ -79,6 +79,26 @@ export const ESPN_TO_QUINIELA: Record<string, string> = {
   Greece: 'Grecia',
   Hungary: 'Hungría',
   Slovakia: 'Eslovaquia',
+  // Equipos de la quiniela que ESPN muestra en inglés
+  Sweden: 'Suecia',
+  Algeria: 'Argelia',
+  Egypt: 'Egipto',
+  Norway: 'Noruega',
+  Uzbekistan: 'Uzbekistán',
+  Haiti: 'Haití',
+  'Cape Verde': 'Cabo Verde',
+  'Cabo Verde': 'Cabo Verde',
+  Curacao: 'Curazao',
+  'Curaçao': 'Curazao',
+  'Bosnia & Herzegovina': 'Bosnia',
+  'Bosnia and Herzegovina': 'Bosnia',
+  'Bosnia-Herzegovina': 'Bosnia',
+  'Congo DR': 'RD Congo',
+  'DR Congo': 'RD Congo',
+  'Democratic Republic of Congo': 'RD Congo',
+  'Congo, DR': 'RD Congo',
+  'Korea Republic': 'Corea del Sur',
+  'Republic of Korea': 'Corea del Sur',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -180,7 +200,9 @@ export function derivarEquiposStats(matches: EspnMatch[]): Record<string, Equipo
     const finished = match.statusState === 'post'
     const round = match.round
 
-    if (round === 'Group Stage') {
+    const r = round.toLowerCase()
+
+    if (r.includes('group')) {
       if (finished) {
         const hs = parseInt(match.home.score ?? '')
         const as_ = parseInt(match.away.score ?? '')
@@ -189,22 +211,22 @@ export function derivarEquiposStats(matches: EspnMatch[]): Record<string, Equipo
           else if (as_ > hs) get(away).victoriasGrupos++
         }
       }
-    } else if (round === 'Round of 32' || round === 'Round of 16') {
+    } else if (r.includes('round of 32') || r.includes('round of 16') || r.includes('round of 48')) {
       get(home).clasifico = true
       get(away).clasifico = true
-    } else if (round.includes('Quarterfinal')) {
+    } else if (r.includes('quarter')) {
       get(home).clasifico = true
       get(away).clasifico = true
       get(home).cuartos = true
       get(away).cuartos = true
-    } else if (round === 'Semifinal') {
+    } else if (r.includes('semi')) {
       get(home).clasifico = true
       get(away).clasifico = true
       get(home).cuartos = true
       get(away).cuartos = true
       get(home).semis = true
       get(away).semis = true
-    } else if (round === '3rd Place') {
+    } else if (r.includes('3rd') || r.includes('third') || r.includes('tercer') || r.includes('place')) {
       // Perdieron la semi, no llegan a la final
       get(home).clasifico = true
       get(away).clasifico = true
@@ -212,7 +234,7 @@ export function derivarEquiposStats(matches: EspnMatch[]): Record<string, Equipo
       get(away).cuartos = true
       get(home).semis = true
       get(away).semis = true
-    } else if (round === 'Final') {
+    } else if (r === 'final' || r.includes('world cup final')) {
       get(home).clasifico = true
       get(away).clasifico = true
       get(home).cuartos = true
