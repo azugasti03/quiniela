@@ -71,7 +71,7 @@ export default function ParticipanteModal({ p, equiposStats, onClose }: Props) {
             const equipo = p[b.key]
             const stats = equipo ? equiposStats[equipo] : undefined
             const pts = stats ? calcularPuntosEquipo(stats) : 0
-            const avanzado = stats?.clasifico || stats?.cuartos || stats?.semis || stats?.final || stats?.campeon
+            const avanzado = stats?.clasifico || stats?.octavos || stats?.cuartos || stats?.semis || stats?.final || stats?.campeon
             return (
               <div key={b.key} className="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-3">
                 <span className={`w-2.5 h-2.5 rounded-full shrink-0 ${b.dot}`} />
@@ -86,7 +86,7 @@ export default function ParticipanteModal({ p, equiposStats, onClose }: Props) {
                     <p className="text-green-600 font-bold text-sm">{pts} pts</p>
                     {avanzado && (
                       <p className="text-xs text-gray-400">
-                        {stats?.campeon ? '🏆' : stats?.final ? 'Final' : stats?.semis ? 'Semis' : stats?.cuartos ? 'Cuartos' : 'Clasificó'}
+                        {stats?.campeon ? '🏆' : stats?.final ? 'Final' : stats?.semis ? 'Semis' : stats?.cuartos ? 'Cuartos' : stats?.octavos ? 'Octavos' : 'Clasificó'}
                       </p>
                     )}
                   </div>

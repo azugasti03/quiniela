@@ -189,7 +189,7 @@ export function derivarEquiposStats(matches: EspnMatch[]): Record<string, Equipo
 
   function get(name: string): EquipoStats {
     if (!stats[name]) {
-      stats[name] = { victoriasGrupos: 0, clasifico: false, cuartos: false, semis: false, final: false, campeon: false }
+      stats[name] = { victoriasGrupos: 0, clasifico: false, octavos: false, cuartos: false, semis: false, final: false, campeon: false }
     }
     return stats[name]
   }
@@ -198,11 +198,10 @@ export function derivarEquiposStats(matches: EspnMatch[]): Record<string, Equipo
     const home = match.home.quinielaName
     const away = match.away.quinielaName
     const finished = match.statusState === 'post'
-    const round = match.round
-
-    const r = round.toLowerCase()
+    const r = match.round.toLowerCase()
 
     if (r.includes('group')) {
+      // Cuenta victorias en grupos (sin penales, grupos no tienen)
       if (finished) {
         const hs = parseInt(match.home.score ?? '')
         const as_ = parseInt(match.away.score ?? '')
@@ -211,32 +210,50 @@ export function derivarEquiposStats(matches: EspnMatch[]): Record<string, Equipo
           else if (as_ > hs) get(away).victoriasGrupos++
         }
       }
-    } else if (r.includes('round of 32') || r.includes('round of 16') || r.includes('round of 48')) {
+    } else if (r.includes('round of 32') || r.includes('round of 48')) {
+      // Aparecer en Ronda de 32 = clasificó de grupos (+3)
       get(home).clasifico = true
       get(away).clasifico = true
+    } else if (r.includes('round of 16') || r.includes('octavo')) {
+      // Aparecer en Ronda de 16 = ganó Ronda de 32 (+3)
+      get(home).clasifico = true
+      get(away).clasifico = true
+      get(home).octavos = true
+      get(away).octavos = true
     } else if (r.includes('quarter')) {
+      // Aparecer en Cuartos = ganó Ronda de 16 (+5)
       get(home).clasifico = true
       get(away).clasifico = true
+      get(home).octavos = true
+      get(away).octavos = true
       get(home).cuartos = true
       get(away).cuartos = true
     } else if (r.includes('semi')) {
+      // Aparecer en Semis = ganó Cuartos (+8)
       get(home).clasifico = true
       get(away).clasifico = true
+      get(home).octavos = true
+      get(away).octavos = true
       get(home).cuartos = true
       get(away).cuartos = true
       get(home).semis = true
       get(away).semis = true
     } else if (r.includes('3rd') || r.includes('third') || r.includes('tercer') || r.includes('place')) {
-      // Perdieron la semi, no llegan a la final
+      // 3er lugar: perdieron la semi, ya tienen semis=true
       get(home).clasifico = true
       get(away).clasifico = true
+      get(home).octavos = true
+      get(away).octavos = true
       get(home).cuartos = true
       get(away).cuartos = true
       get(home).semis = true
       get(away).semis = true
     } else if (r === 'final' || r.includes('world cup final')) {
+      // Aparecer en Final = ganó Semis (+10)
       get(home).clasifico = true
       get(away).clasifico = true
+      get(home).octavos = true
+      get(away).octavos = true
       get(home).cuartos = true
       get(away).cuartos = true
       get(home).semis = true

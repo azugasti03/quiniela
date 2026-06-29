@@ -2,11 +2,12 @@ import { EquipoStats, Participante, ParticipanteConPuntos } from './types'
 
 export function calcularPuntosEquipo(stats: EquipoStats): number {
   let pts = stats.victoriasGrupos * 1
-  if (stats.clasifico) pts += 3
-  if (stats.cuartos) pts += 5
-  if (stats.semis) pts += 8
-  if (stats.final) pts += 10
-  if (stats.campeon) pts += 15
+  if (stats.clasifico) pts += 3   // pasó grupos → Ronda de 32
+  if (stats.octavos)   pts += 3   // ganó Ronda de 32 → Ronda de 16
+  if (stats.cuartos)   pts += 5   // ganó Ronda de 16 → Cuartos
+  if (stats.semis)     pts += 8
+  if (stats.final)     pts += 10
+  if (stats.campeon)   pts += 15
   return pts
 }
 

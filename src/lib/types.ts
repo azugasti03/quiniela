@@ -15,11 +15,12 @@ export interface Participante {
 
 export interface EquipoStats {
   victoriasGrupos: number
-  clasifico: boolean
-  cuartos: boolean
-  semis: boolean
-  final: boolean
-  campeon: boolean
+  clasifico: boolean  // pasó grupos → Ronda de 32 (+3)
+  octavos: boolean    // ganó Ronda de 32 → Ronda de 16 (+3)
+  cuartos: boolean    // ganó Ronda de 16 → Cuartos (+5)
+  semis: boolean      // ganó Cuartos → Semis (+8)
+  final: boolean      // ganó Semis → Final (+10)
+  campeon: boolean    // ganó Final (+15)
 }
 
 export interface Partido {
